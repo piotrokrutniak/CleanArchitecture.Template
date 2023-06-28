@@ -1,11 +1,6 @@
 ﻿using Application.Interfaces;
 using Domain.Common;
-using Domain.Models.Builds;
-using Domain.Models.Discounts;
-using Domain.Models.Entities;
 using Domain.Models.Images;
-using Domain.Models.Orders;
-using Domain.Models.Products;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -43,19 +38,8 @@ namespace Infrastructure.Persistence.Contexts
             _authenticatedUser = authenticatedUser;
         }
 
-        public DbSet<Product> Products { get; set; }
-        public DbSet<ProductType> ProductTypes { get; set; }
-        public DbSet<ProductDetail> ProductDetails { get; set; }
-        public DbSet<DetailType> DetailTypes { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderItem> OrderItems { get; set; }
-        public DbSet<Manufacturer> Manufacturers { get; set; }
-        public DbSet<Build> Builds { get; set; }
-        public DbSet<BuildItem> BuildItems { get; set; }
         public DbSet<Image> Images { get; set; }
         //public DbSet<ImageAssignment> ImageAssignments { get; set; }
-        public DbSet<DiscountCode> DiscountCodes { get; set; }
-        public DbSet<ProductDiscount> ProductDiscounts { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
